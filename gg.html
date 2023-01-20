@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="sec" type="text">
+    <input id="sac" type="text">
+    <h1 id="show"></h1>
+    <button onclick="car()">Click</button>
+</body>
+<script>
+    let inp1 = document.getElementById('sec')
+    let inp2 = document.getElementById('sac')
+    let show = document.getElementById('show')
+    let timeout = null
+    let count = 0
+
+    function baz() {
+       let cos = count--
+        let play = Number(inp1.value) + Number(cos)
+        show.innerHTML = ` ${play} : ${inp2.value}`
+        if(play == inp2.value){
+            clearTimeout(timeout)
+        }
+    }
+    function car() {
+        timeout = setInterval(baz, 1000);
+    }
+</script>
+
+</html>
